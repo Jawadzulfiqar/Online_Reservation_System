@@ -1,0 +1,51 @@
+﻿@if (HttpContext.Current.Session.IsNewSession != false || HttpContext.Current.Session["name"] == null)
+{
+        Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    [class*="badger"] {
+        position: relative;
+        margin: 5px 0;
+        padding: 39px 19px 14px;
+        background: #fff;
+        border: 5px solid #ddd;
+        border-radius: 6px;
+        font-size: 15px;
+        background-color:#282828;
+        color:white;
+    }
+    [class*="badger"]:after {
+        content: attr(data-badger);
+        position: absolute;
+        top: 0;
+        padding: 3px 7px;
+        font-size: 20px;
+        font-weight: bold;
+        background: #999;
+        color: #fff;
+    }
+    .badger-left:after {
+        left: 0;
+        border-radius: 6px 0 6px 0;
+    }
+    .badger-right:after {
+        right: 0;
+        border-radius: 0 6px 0 6px;
+    }
+</style>
+<marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();"><img style="width:400px;height:300px" src="/Content/Images/Daewoo1.jpg" /><img style="width:400px;height:300px" src="/Content/Images/pic3.jpg" /></marquee>
+<div>
+    <h1 style="text-align:center;color:blueviolet">Welcome to Daewoo Reservation System</h1>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="badger-left" data-badger="A timeline of the operations and beginnings of Daewoo Express Ltd:">
+            <div class="badger-left" data-badger="Initiation">December 1997 - Incorporated</div>
+            <div class="badger-left" data-badger="Smooth Begin of Express Bus system">April 1998 - Beginning of Express Bus Operations</div>
+            <div class="badger-left" data-badger="Smooth Begin of City Bus system">November 1999 - Beginning of City Bus Operations
+        </div>
+        <div class="badger-left" data-badger="Domination">January 2004 - Took Over by Sammi Corporation, Seoul, Korea
+33 cities on 43 destinations with over 200 buses.</div>
+        </div>
+    </div>
+</div>

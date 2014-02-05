@@ -1,0 +1,41 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<style>    
+    .row {
+        background-color: #282828;
+        text-align:center;
+    }
+    .center-table {
+        margin: 0 auto !important;
+        float: none !important;
+    }
+    #sbmt{
+        height: 50px;
+        width: 150px;
+        padding: 7px;
+        color: black;
+    }
+</style>
+<form name = "signin" method="post" action="/Admin/SigninConfirm">
+    <div  class="row navbar-inverse">
+        <h1 style ="color:white"  >Sign In</h1><br/>
+	    <table class="nav navbar-nav navbar-brand center-table">
+		    <tr >
+	            <td><h3 style = "color:white">User Name:</h3></td>
+		    </tr>
+		    <tr>
+			    <td><input class="form-control" type = "text" name = "email"></td>
+		    </tr>	
+		    <tr>
+			    <td><h3 style = "color:white">Password:</h3></td>
+		    </tr>	
+		    <tr>
+			    <td><input class="form-control" type = "password" name = "pass"></td>
+	        </tr>
+		    <tr>
+			    <td> <br><input id="sbmt" class="btn btn-success" type = "submit" value = "Sign in" /></td>
+		    </tr>
+	    </table>
+    </div>
+</form>

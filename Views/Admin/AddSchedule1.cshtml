@@ -1,0 +1,15 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="row navbar-inverse" style="text-align:center">
+    @if(ViewBag.x == "true")
+    {
+        <h3 style="color:white">You have successfully added your record</h3>
+    }
+    else
+    {
+        <h3 style="color:white">Sorry! There is some problem with your inputted data</h3>
+    }
+    <br /><br />
+    <a href="/Admin/AdminView" class="btn btn-success" type="button" >Go to The Main Page</a>
+</div>

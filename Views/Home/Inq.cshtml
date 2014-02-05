@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "Inq";
+}
+<style>
+    h1 , h3 , h2 {
+        color: white;
+        margin-left:20px
+    }
+</style>
+<h1>Here are the details about the seats you have reserved</h1>
+@foreach(var x in Model)
+{
+    <h2>Details with serail # of @x.id :</h2>
+    <div style="margin-left:30px">
+    <table>
+        <tr>
+            <td><h3>Serial Number: </h3></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><h3>@x.id</h3></td>
+        </tr>
+        <tr>
+            <td><h3>Bus Id Number: </h3></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><h3>@x.bus_id</h3></td>
+        </tr>
+        <tr>
+            <td><h3>Date of registeration: </h3></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><h3>@x.date</h3></td>
+        </tr>
+        <tr>
+            <td><h3>Number of seats Allocated: </h3></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><h3>@x.nos</h3></td>
+        </tr>
+        <tr>
+            <td><h3>Departure Place: </h3></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><h3>@x.source</h3></td>
+        </tr>
+        <tr>
+            <td><h3>Destination place: </h3></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><h3>@x.destination</h3></td>
+        </tr>    
+        <tr>
+            <td><h3>Departure Time: </h3></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><h3>@x.departTime</h3></td>
+        </tr>
+        <tr>
+            <td><h3>Fare: </h3></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><h3>@x.fare</h3></td>
+        </tr>
+    </table>
+        </div>
+}

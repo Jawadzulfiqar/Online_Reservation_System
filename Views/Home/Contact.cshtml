@@ -1,0 +1,26 @@
+﻿@if (HttpContext.Current.Session.IsNewSession != false)
+{
+        Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .row {
+        background-color: #282828;
+        text-align:center;
+    }
+    .center-table {
+        margin: 0 auto !important;
+        float: none !important;
+    }
+    h2 {
+        color:blueviolet;
+    }
+    h4 {
+        color:darkviolet;
+    }
+</style>
+<div class="row navbar-inverse">
+    <h2>CEO's Land Line :</h2><br />
+    <h4>+92-333-1234567</h4>
+    <h2>GM's Land Line :</h2><br />
+    <h4>+92-333-7654321</h4>
+</div>

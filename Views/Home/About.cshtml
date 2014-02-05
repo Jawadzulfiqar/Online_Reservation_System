@@ -1,0 +1,26 @@
+﻿@if (HttpContext.Current.Session.IsNewSession != false)
+{
+        Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .about{
+        margin-left: 300px;
+        margin-top: 100px;
+    }
+    h2 , h4{
+        color:white;
+    }
+</style>
+<div class="row navbar-inverse">
+    <h1 style="color:aqua">Board Of Governers:</h1>
+    <h2>President:</h2>
+    <h4>Mr. Zulfiqar Ali</h4>
+    <h2>Vice President:</h2>
+    <h4>Mr. Muhammad Din </h4>
+    <h2>General Finance Head:</h2>
+    <h4>Mr. Abdul Karim Abid </h4>
+    <h2>Operational Manager:</h2>
+    <h4>Mr. Muhammad Mushtaq.</h4>
+    <h2>Ambassador:</h2>
+    <h4>Mr. Umair Mushtaq </h4>       
+</div>

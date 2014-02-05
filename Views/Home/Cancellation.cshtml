@@ -1,0 +1,32 @@
+﻿<style>
+    .row {
+        background-color: #282828;
+        text-align:center;
+    }
+    .center-table {
+        margin: 0 auto !important;
+        float: none !important;
+    }
+</style>
+<form name = "cancelSeat" method="post" action="/Home/Cancellation1">
+    <div class="row navbar-inverse">
+        <h1 style = "color:white">Seat Cancellation</h1><br/>
+	    <table class="nav navbar-nav navbar-brand center-table">
+		    <tr>
+			    <td><h3 style = "color:white">Serial # :</h3></td>
+		    </tr>
+		    <tr>
+			    <td><input class="form-control" name = "serial" /></td>
+		    </tr>
+		    <tr>
+			    <td><h3 style = "color:white">How many Seats You want to cancel:</h3></td>
+		    </tr>
+		    <tr>
+			    <td><input class="form-control" type="text" name = "seat"></td>
+		    </tr>
+		    <tr>
+			    <td> <br><input class="btn btn-success" type = "submit" value = "Cancel Seat" ></td>
+		    </tr>
+	    </table>   
+    </div>
+</form>

@@ -1,0 +1,22 @@
+﻿@model Online_Daewoo_Reservation_System.Models.BusInfo
+@{
+    ViewBag.Title = "BusSchedule";
+}
+<script>
+    $(document).ready(function () {
+        alert("Before Click");
+        $('#show').click(function () {
+            alert("hello");
+            $.getJSON("/Home/getSchedule", function(data) {
+                alert(""+data);
+              //  $('#l1').append('<ul><li>data</li></ul>');
+                $.each(data, function (i, item) {
+                    $('#l1').append('<li>' + item+'</li>');
+                });
+            });
+        });
+    });
+</script>
+
+<input class ="btn btn-success" type="button" value ="Show Schedule" id="show"/>
+<div id="l1"></div>

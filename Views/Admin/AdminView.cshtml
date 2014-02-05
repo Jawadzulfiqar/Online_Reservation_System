@@ -1,0 +1,30 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<head>
+    <script>
+        $(document).ready(function () {
+            $("#updat").hide();
+            $("#update").click(function () {
+                $("#updat").show();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="row navbar-inverse" style="text-align:center">
+        <h1 style="color:white">Welcome Admin</h1>
+        <h3 style="color:white">What you want to do ?</h3>
+        <a href="~/Admin/AddSchedule" class="btn btn-success" type="button">Add Buses to the Schedule</a>
+        <br /><br />
+        <input class="btn btn-success" type= "submit" id="update" value = "Update Schedule">
+    </div>
+    <div class="row navbar-inverse" style="text-align:center" id="updat">
+        <form method="post" action="/Admin/UpdateSchedule">
+        <h3 style="color:white">Enter Bus ID</h3><br />
+        <input class="form-contrl" type="text" name="bid" /><br /><br />
+        <input class="btn btn-success" type= "submit" value = "Update" name="upd" />
+        </form>
+    </div>
+</body>

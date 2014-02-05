@@ -1,0 +1,103 @@
+﻿@model Online_Daewoo_Reservation_System.Models.seatReservation
+@{
+    ViewBag.Title = "Reservation";
+}
+<style>
+    .row {
+        background-color: #282828;
+        text-align:center;
+    }
+    .center-table {
+        margin: 0 auto !important;
+        float: none !important;
+    }
+    .main{
+	    margin-left: 100px;
+    }
+    .rowstyle {
+        margin-left: 200px;
+    }
+    .rowstyle1 {
+        margin-left: 150px;
+    }
+	button{margin-left:100px;width:100px;height:30px}
+	input{margin-left:100px;width:200px;height:40px}
+</style>  
+
+<form id="page" method="post" action="/Home/Reservation1">
+    <div class="row navbar-inverse">     
+        <h1 style = "color:white">Seat Reservation</h1><br/>
+        <table class="nav navbar-nav navbar-brand center-table">
+		    <tr>
+			    <td><h3 style = "color:white">NIC #:</h3></td>
+		    </tr>
+		    <tr>
+                <td></td>
+			    <td>@Html.TextBoxFor(m =>m.nic)</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>@Html.ValidationMessageFor(m => m.nic)</td>
+            </tr>
+		    <tr>
+			    <td><h3 style = "color:white"># of Seats:</h3></td>
+		    </tr>
+		    <tr>
+                <td></td>
+			    <td>@Html.TextBoxFor(m => m.noOfSeats)</td>
+		    </tr>
+            <tr>
+                <td></td>
+                <td>@Html.ValidationMessageFor(m => m.noOfSeats)</td>
+            </tr>
+            <tr>
+			    <td><h3 style = "color:white">Departure Place</h3></td>
+		    </tr>
+		    <tr>
+                <td></td>
+			    <td>@Html.TextBoxFor(m => m.BusInfo.source)</td>
+		    </tr>
+            <tr>
+                <td></td>
+                <td>@Html.ValidationMessageFor(m => m.BusInfo.source)</td>
+            </tr>
+		    <tr>
+			    <td><h3 style = "color:white">Destination Place</h3></td>
+		    </tr>
+		    <tr>
+                <td></td>
+                <td>@Html.TextBoxFor(m =>m.BusInfo.destination)</td>
+		    </tr>	
+		    <tr>
+                <td></td>
+                <td>@Html.ValidationMessageFor(m =>m.BusInfo.destination)</td>
+		    </tr>	
+		    <tr>
+			    <td><h3 style = "color:white">Departure Time</h3></td>
+		    </tr>
+		    <tr>
+                <td></td>
+			    <td>@Html.TextBoxFor(m => m.BusInfo.deptime)</td>
+		    </tr>
+		    <tr>
+                <td></td>
+			    <td>@Html.ValidationMessageFor(m => m.BusInfo.deptime)</td>
+		    </tr>
+            <tr>
+                <td><h3 style = "color:white">Date:</h3></td>
+		    </tr>
+            <tr>
+                <td></td>
+		        <td>@Html.TextBoxFor( m => m.date)</td>
+		    </tr>
+            <tr>
+                <td></td>
+		        <td>@Html.ValidationMessageFor( m => m.date)</td>
+		    </tr>
+		    <tr>
+                <td></td>
+			    <td> <br><input class="btn btn-success" type= "submit" value = "Reserve Seat" name="dir"></td>
+		    </tr>
+	    </table>
+     </div>
+</form>

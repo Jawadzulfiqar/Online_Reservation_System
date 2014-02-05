@@ -1,0 +1,74 @@
+﻿@model Online_Daewoo_Reservation_System.Models.BusInfo
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<style>
+    .row {
+        background-color: #282828;
+        text-align:center;
+    }
+    .center-table {
+        margin: 0 auto !important;
+        float: none !important;
+    }
+</style>
+<form name = "Signup" method="post" action="/Admin/updateSchedule1">
+    <div class="row navbar-inverse">
+	    <h1 style = "color:white">Update Information</h1><br/>
+	    <table class="nav navbar-nav navbar-brand center-table">
+		    <tr>
+			    <td><h3 style = "color:white">Departure Place:</h3></td>
+		    </tr>
+		    <tr>
+                <td></td>
+			    <td>@Html.TextBoxFor( m => m.source) </td>
+		    </tr>
+		    <tr>
+			    <td><h3 style = "color:white">Destination Place:</h3></td>
+		    </tr>
+		    <tr>
+                <td></td>
+			    <td>@Html.TextBoxFor(m => m.destination)</td>
+		    </tr>
+		    <tr>
+			    <td><h3 style = "color:white">Departure Time:</h3></td>
+		    </tr>
+		    <tr>
+                <td></td>
+			    <td>@Html.TextBoxFor(m => m.deptime)</td>
+		    </tr>	
+		    <tr>
+			    <td><h3 style = "color:white">Arrival Time:</h3></td>
+		    </tr>
+		    <tr>
+                <td></td>
+			    <td>@Html.TextBoxFor(m => m.arrtime) </td>
+		    </tr>
+		    <tr>
+			    <td><h3 style = "color:white">Seat:</h3></td>
+		    </tr>
+		    <tr>
+                <td></td>
+			    <td>@Html.TextBoxFor(m => m.seat)</td>
+		    </tr>
+		    <tr>
+			    <td><h3 style = "color:white">Fare:</h3></td>
+		    </tr>
+		    <tr>
+                <td></td>
+			    <td>@Html.TextBoxFor( m => m.Fare )</td>
+		    </tr>
+		    <tr>
+			    <td><h3 style = "color:white">Original Bus ID:</h3></td>
+		    </tr>
+		    <tr>
+                <td></td>
+			    <td>@Html.TextBoxFor( m => m.OriginalBusId )</td>            
+		    </tr>
+            <tr>
+                <td></td>
+			    <td> <br><input class="btn btn-success :hover" type = "submit" value = "Update Schedule"></td>
+		    </tr>
+	    </table>
+    </div>
+</form>

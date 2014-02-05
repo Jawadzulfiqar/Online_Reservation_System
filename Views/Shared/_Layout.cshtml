@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/bootstrapcss")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrapjs")
+    @Scripts.Render("~/bundles/jqueryval")
+
+</head>
+<body style="background-color:#500000">
+    
+        <div class="navbar navbar-inverse navbar-fixed-left" >
+        <div>
+            <ul class="nav navbar-nav btn pull-left navbar-inverse" style="color:white">
+                <li>@Html.ActionLink("Welcome To The DAEWOO...", "Index")</li>
+                
+                <li>@Html.ActionLink("Agenda" , "Agenda")</li>
+                <li>@Html.ActionLink("About us" , "About")</li>
+                <li>@Html.ActionLink("Contact us" , "Contact")</li>
+                <li>@Html.ActionLink("Bus Schedule" , "BusSchedule")</li>
+            </ul>
+            <ul class="nav navbar-nav btn pull-right navbar-inverse">
+                 <li>@Html.ActionLink("Sign in" , "SigninOption")</li>
+                 <li>@Html.ActionLink("Signup" , "Signup")</li>
+            </ul>
+        </div>
+            </div>
+    @RenderBody()
+    <div style="margin-left:950px" class="navbar navbar-fixed-bottom" >
+        <div>
+            <a class="navbar-brand"><img style="width:100px;height:30px" src="/Content/Images/img.png" alt="Logo" />All rights reserved by Daewoo.</a>
+        </div>
+    </div>
+</body>
+</html>

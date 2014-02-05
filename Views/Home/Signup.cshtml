@@ -1,0 +1,136 @@
+@model Online_Daewoo_Reservation_System.Models.Member
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .row {
+        background-color: #282828;
+        text-align:center;
+    }
+    .center-table {
+        margin: 0 auto !important;
+        float: none !important;
+    }
+</style>
+<script>
+    $(document).ready(function () {
+        $('#valid').click(function () {
+            var nic = $('#nic').val();
+            $('#status').html("Checking");
+            $.getJSON("/Home/checkName?nic="+nic, function (data) {
+                if (data) {
+                    $('#status').html("NIC Available to use");
+                }
+                else {
+                    $('#status').html("NIC Already exist");
+                }
+            });
+        });
+    });
+</script>
+
+@Html.BeginForm(){
+<form name = "Signup" method="post" action="/Home/SignupConfirm">
+    <div class="row navbar-inverse">
+	<h1 style = "color:white">Sign Up</h1><br/>
+	    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+        <table class="nav navbar-nav navbar-brand center-table">
+		<tr>
+			<td><h3 style = "color:white">NIC #:</h3></td>
+		</tr>
+		<tr>
+            <td></td>
+			<td>@Html.TextBoxFor(m => m.nic) </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>@Html.ValidationMessageFor(m => m.nic)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input class="btn btn-success :hover" type = "button" id="valid" value = "Check validity" /></td>
+		</tr>
+        <tr>
+            <td></td>
+            <td><div style="color:white" id="status" /></td>
+        </tr>
+		<tr>
+
+			<td><h3 style = "color:white">First Name:</h3></td>
+		</tr>
+		<tr >
+            <td></td>
+			<td>@Html.TextBoxFor(m => m.fname)</td>
+		</tr>
+		<tr>
+            <td></td>
+            <td>@Html.ValidationMessageFor(m => m.fname)</td>
+		</tr>
+		<tr>
+			<td><h3 style = "color:white">Last Name:</h3></td>
+		</tr>
+		<tr>
+            <td></td>
+			<td>@Html.TextBoxFor(m => m.lname)</td>
+		</tr>
+        <tr>
+            <td></td>
+            <td>@Html.ValidationMessageFor(m => m.lname)</td>
+        </tr>		
+		<tr>
+			<td><h3 style = "color:white">Email Address</h3></td>
+		</tr>
+		<tr>
+            <td></td>
+			<td>@Html.TextBoxFor(m => m.email)</td>
+		</tr>
+		<tr>
+            <td></td>
+            <td>@Html.ValidationMessageFor(m => m.email)</td>
+		</tr>
+		<tr>
+			<td><h3 style = "color:white">Password:</h3></td>
+		</tr>
+		
+		<tr>
+            <td></td>
+			<td>@Html.TextBoxFor(m => m.pass)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>@Html.ValidationMessageFor(m => m.pass)</td>
+		</tr>
+		
+		<tr>
+			<td><h3 style = "color:white">Postal Code</h3></td>
+		</tr>
+		<tr>
+            <td></td>
+			<td>@Html.TextBoxFor(m => m.pcode)</td>
+            
+		</tr>
+		<tr>
+            <td></td>
+            <td>@Html.ValidationMessageFor(m => m.pcode)</td>
+		</tr>
+		<tr>
+			<td><h3 style = "color:white">TelePhone #:</h3></td>
+		</tr>
+		<tr>
+            <td></td>
+			<td>@Html.TextBoxFor(m => m.tphone)</td>
+            
+		</tr>
+        <tr>
+            <td></td>
+            <td>@Html.ValidationMessageFor(m => m.tphone)</td>
+        </tr>
+		<tr>
+            <td></td>
+			<td> <br><input class="btn btn-success :hover" type = "submit" value = "Sign Up"></td>
+		</tr>
+	</table>
+    </div>
+</form>
+}

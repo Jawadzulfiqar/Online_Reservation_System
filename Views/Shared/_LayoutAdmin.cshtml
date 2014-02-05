@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/bootstrapcss")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrapjs")
+    @Scripts.Render("~/bundles/jqueryval")
+</head>
+<body style="background-color:#500000">
+    
+        <div class="navbar navbar-inverse navbar-fixed-left" >
+        <div>
+            <ul class="nav navbar-nav btn pull-left navbar-inverse" style="color:white">
+                <li><h3>Welcome Admin...</h3></li>
+            </ul>
+        </div>
+            </div>
+      @RenderBody()
+    </body>
+    </html>

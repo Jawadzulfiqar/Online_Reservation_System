@@ -1,0 +1,107 @@
+﻿@model Online_Daewoo_Reservation_System.Models.BusInfo
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+    <style>
+        .row {
+            background-color: #282828;
+            text-align:center;
+        }
+        .center-table {
+            margin: 0 auto !important;
+            float: none !important;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('#valid').click(function () {
+                var bus = $('#OriginalBusId').val();
+                $('#status').html("Checking");
+                $.getJSON("/Admin/checkName?OriginalBusId=" + bus, function (data) {
+                    if (data) {
+                        $('#status').html("Bus ID Not Exist Already");
+                    }
+                    else {
+                        $('#status').html("Bus ID Already exist");
+                    }
+                });
+            });
+        });
+    </script>
+@Html.BeginForm(){
+<form name = "Signup" method="post" action="/Admin/AddSchedule1">
+    <div class="row navbar-inverse">
+	    <h1 style = "color:white">Add Information</h1><br/>
+	    <table class="nav navbar-nav navbar-brand center-table">
+		    <tr>
+			    <td><h3 style = "color:white">Departure Place:</h3></td>
+		    </tr>
+		    <tr>
+                <td></td>
+			    <td>@Html.TextBoxFor(m => m.source) </td>
+                <td>@Html.ValidationMessageFor(m => m.source)</td>
+		    </tr>
+		    <tr>
+			    <td><h3 style = "color:white">Destination Place:</h3></td>
+		    </tr>
+		    <tr>
+                <td></td>
+			    <td>@Html.TextBoxFor(m => m.destination)</td>
+                <td>@Html.ValidationMessageFor(m => m.destination)</td>
+		    </tr>
+		    <tr>
+			    <td><h3 style = "color:white">Departure Time:</h3></td>
+		    </tr>
+		    <tr>
+                <td></td>
+			    <td>@Html.TextBoxFor(m => m.deptime)</td>
+                <td>@Html.ValidationMessageFor(m => m.deptime)</td>
+		    </tr>	
+		    <tr>
+			    <td><h3 style = "color:white">Arrival Time:</h3></td>
+		    </tr>
+		    <tr>
+                <td></td>
+			    <td>@Html.TextBoxFor(m => m.arrtime) </td>
+                <td>@Html.ValidationMessageFor(m => m.arrtime)</td>
+		    </tr>
+		    <tr>
+			    <td><h3 style = "color:white">Seat:</h3></td>
+		    </tr>
+		    <tr>
+                <td></td>
+			    <td>@Html.TextBoxFor(m => m.seat)</td>
+                <td>@Html.ValidationMessageFor(m => m.seat)</td>
+		    </tr>
+		    <tr>
+			    <td><h3 style = "color:white">Fare:</h3></td>
+		    </tr>
+		    <tr>
+                <td></td>
+			    <td>@Html.TextBoxFor( m => m.Fare )</td>
+                <td>@Html.ValidationMessageFor(m => m.Fare)</td>
+		    </tr>
+		    <tr>
+			    <td><h3 style = "color:white">Original Bus ID:</h3></td>
+		    </tr>
+		    <tr>
+                <td></td>
+			    <td>@Html.TextBoxFor( m => m.OriginalBusId )</td>
+                <td>@Html.ValidationMessageFor(m => m.OriginalBusId)</td>            
+		    </tr>
+            <tr>
+                <td></td>
+                <td><input class="btn btn-success :hover" type = "button" id="valid" value = "Check validity" /></td>
+            </tr>
+            <tr>
+                <td><div id="status" /></td>
+            </tr>
+		    <tr>
+                <td></td>
+			    <td> <br><input class="btn btn-success :hover" type = "submit" value = "Add Schedule"></td>
+		    </tr>
+	        </table>
+        </div>
+    </form>
+}

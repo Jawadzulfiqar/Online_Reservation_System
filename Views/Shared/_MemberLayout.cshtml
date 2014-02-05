@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/bootstrapcss")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrapjs")
+    @Scripts.Render("~/bundles/jqueryval")
+
+</head>
+<body style="background-color:#500000">
+        <div class="navbar navbar-inverse navbar-fixed-left" >
+        <div>
+            <ul class="nav navbar-nav btn pull-left navbar-inverse" style="color:white">
+                <li>@Html.ActionLink("Welcome Mr./Mrs. " + HttpContext.Current.Session["name"] , "Index")</li>
+                <li>@Html.ActionLink("Agenda" , "Agenda")</li>
+                <li>@Html.ActionLink("About us" , "About")</li>
+                <li>@Html.ActionLink("Seat Reservation " , "Reservation")</li>
+                <li>@Html.ActionLink("Seat Cancellation" ,"SeatInquiryByNIC")</li>
+                <li>@Html.ActionLink("Seat Inquiry" , "SeatInq")</li>
+                <li>@Html.ActionLink("Contact us" , "Contact")</li>
+            </ul>
+            <ul class="nav navbar-nav btn pull-right navbar-inverse">
+                 <li>@Html.ActionLink("Logout" , "logout")</li>
+            </ul>
+        </div>
+            </div>
+    @RenderBody()
+    <div style="margin-left:950px" class="navbar navbar-fixed-bottom" >
+        <div>
+            <a class="navbar-brand"><img style="width:100px;height:30px" src="/Content/Images/img.png" alt="Logo" />All rights reserved by Daewoo.</a>
+        </div>
+    </div>
+</body>
+</html>

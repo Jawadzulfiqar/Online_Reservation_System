@@ -1,0 +1,48 @@
+﻿@model Online_Daewoo_Reservation_System.Models.Member
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .row {
+        background-color: #282828;
+        text-align:center;
+    }
+    .center-table {
+        margin: 0 auto !important;
+        float: none !important;
+    }
+    #sbmt{
+        height: 50px;
+        width: 150px;
+        padding: 7px;
+        color: black;
+    }
+</style>
+<form name = "signin" method="post" action="/Home/Sign">
+    <div  class="row navbar-inverse">
+        <h1 style ="color:white"  >Sign In</h1><br/>
+        <table class="nav navbar-nav navbar-brand center-table">
+		    <tr >
+			    <td><h3 style = "color:white">Username:</h3></td>
+		    </tr>
+		    <tr>
+		        <td>@Html.TextBoxFor(m => m.email)</td>        
+		    </tr>
+            <tr>
+                <td>@Html.ValidationMessageFor(m=>m.email)</td>
+            </tr>	
+		    <tr>
+			    <td><h3 style = "color:white">Password:</h3></td>
+		    </tr>	
+		    <tr>
+                <td>@Html.TextBoxFor(m => m.pass)</td>    
+		    </tr>
+            <tr>
+                <td>@Html.ValidationMessageFor(m=>m.pass)</td>
+            </tr>
+		    <tr>
+			    <td> <br><input id="sbmt" class="btn btn-success" type = "submit" value = "Sign in" /></td>
+		    </tr>
+	    </table>
+    </div>
+</form>

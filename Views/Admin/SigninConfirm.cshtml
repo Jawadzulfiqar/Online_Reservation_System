@@ -1,0 +1,28 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<script>
+    $(document).ready(function () {
+        $('#form1').hide();
+        $('#fileUp').click(function () {
+            $('#form1').show();
+        });
+    });
+</script>
+@if(ViewBag.x == "True")
+{
+    <div  class="row navbar-inverse">
+        <a href="~/Admin/AdminView" class="btn btn-success" type="button" >Add Schedule Manually</a>
+        <input id="fileUp" class="btn btn-success" type="button" value="Upload a File" />
+    </div>
+    <div id="form1"  class="row navbar-inverse">
+        <form method="post" action="/Admin/FileRecordsUpload" enctype="multipart/form-data">
+            Upload Image: <input class="btn btn-success" type="file" name="image" />
+            <input class="btn btn-success" type="submit" value="upload" />
+        </form>
+    </div>
+}
+else
+{
+    <h2 style="color:white">Email or Password Wrong</h2>
+}

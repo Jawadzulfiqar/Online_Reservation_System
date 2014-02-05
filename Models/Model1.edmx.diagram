@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f1e0f537877b4b609ea1d3e03421f96c" Name="Diagram1">
+        <EntityTypeShape EntityType="OnlineReservationModel.BusInfo" Width="1.5" PointX="1.6364994727245064" PointY="24.723047595807838" />
+        <EntityTypeShape EntityType="OnlineReservationModel.Member" Width="1.5" PointX="11.75" PointY="6.875" />
+        <EntityTypeShape EntityType="OnlineReservationModel.seatReservation" Width="1.5" PointX="14.375" PointY="5.875" />
+        <AssociationConnector Association="OnlineReservationModel.FK_Table_BusInfo" />
+        <AssociationConnector Association="OnlineReservationModel.FK_Table_Member" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
